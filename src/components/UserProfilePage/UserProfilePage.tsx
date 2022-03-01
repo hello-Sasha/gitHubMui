@@ -3,7 +3,6 @@ import "./UserProfilePage.css";
 import { useParams } from "react-router-dom";
 import { User, Repo } from "../../types";
 import {Card, CardContent, Grid, Typography, CardActionArea, Container, Link as LinkMui, Avatar} from "@mui/material";
-import { Link } from "react-router-dom";
 
 export const UserProfilePage: FC = () => {
   const [userInfo, setUserInfo] = useState<User>();
@@ -21,7 +20,7 @@ export const UserProfilePage: FC = () => {
         .then((response) => response.json())
         .then(setRepos);
     }
-  }, [userInfo]);
+  }, [userInfo,login]);
 
 
   return (

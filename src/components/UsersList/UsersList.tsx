@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Card from '@mui/material/Card';
 
 import CardContent from '@mui/material/CardContent';
-import CardActionArea from '@mui/material/CardActionArea';
 
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
@@ -14,7 +13,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import Typography from '@mui/material/Typography';
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { Grid,  Container} from "@mui/material";
+import { Grid} from "@mui/material";
 
 
 interface Props {
@@ -35,8 +34,7 @@ export const UsersList: FC<Props> = ({ users, setUsers }: Props) => {
    setUsers(res);
   };
   const addtoFav=(id:number)=>{
-    const res = users.map( (user)=>{ if(user.id==id) {return {...user, "favIconfield":true}} else {return user}});// add field fav to element and change heart class
-    //arr.map((x)=>{ if(x.id==3) {return {...x,"newfield":true}}})
+    const res = users.map( (user)=>{ if(user.id===id) {return {...user, "favIconfield":true}} else {return user}});// add field fav to element and change heart class
     setUsers(res);
   }
   return (
