@@ -1,5 +1,5 @@
 import React, { FC, FormEvent, useState } from "react";
-
+import { Link as RouterLink } from 'react-router-dom'; 
 
 import TextField from "@mui/material/TextField";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -20,6 +20,7 @@ export const Header: FC<Props> = ({ users }: Props) => {
   const navigate = useNavigate();
   const [searchValue, setSearchValue] = useState("");
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+    console.log({users})
     event.preventDefault();
     //const res =users.filter(user=>user.login.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()));
     const res = users.filter((user) =>
@@ -55,7 +56,7 @@ export const Header: FC<Props> = ({ users }: Props) => {
         alignItems="center"
       >
         <Grid item xs={4} md={6} lg={8} >
-          <Link underline="hover" color="#bf360c" href="/">
+          <Link underline="hover" color="#bf360c" to={"/"}  component={RouterLink} >
             <Typography variant="h6" color="#bf360c">
               GITHUB USERS //
             </Typography>

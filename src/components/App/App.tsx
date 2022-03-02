@@ -74,8 +74,16 @@ export const App: FC = () => {
   React.useEffect(() => {
     try{
       fetch("https://api.github.com/users")
-      .then((response) => response.json())
-      .then(setPreusers)
+      .then((response) => {
+        //response.json();
+        if (!response.ok) {
+          //setPreusers(initialUsers);
+          return initialUsers;
+        } else{
+          return response.json();
+        }
+      })
+      .then(setPreusers);
     }catch (e) {
       console.log(e);
       setPreusers(initialUsers);
