@@ -30,8 +30,8 @@ const initialUsers=[
     "type": "User",
     "site_admin": false
   },  {
-    "login": "octocat",
-    "id": 1,
+    "login": "octocat2",
+    "id": 2,
     "node_id": "MDQ6VXNlcjE=",
     "avatar_url": "https://github.com/images/error/octocat_happy.gif",
     "gravatar_id": "",
@@ -49,8 +49,8 @@ const initialUsers=[
     "type": "User",
     "site_admin": false
   },  {
-    "login": "octocat",
-    "id": 1,
+    "login": "octocat3",
+    "id": 3,
     "node_id": "MDQ6VXNlcjE=",
     "avatar_url": "https://github.com/images/error/octocat_happy.gif",
     "gravatar_id": "",
@@ -72,9 +72,15 @@ const initialUsers=[
 export const App: FC = () => {
   const [preusers, setPreusers] = React.useState<preUser[]>(initialUsers);
   React.useEffect(() => {
-    fetch("https://api.github.com/users")
+    try{
+      fetch("https://api.github.com/users")
       .then((response) => response.json())
-      .then(setPreusers);
+      .then(setPreusers)
+    }catch (e) {
+      console.log(e);
+      setPreusers(initialUsers);
+    }
+   
   }, []);
 
 

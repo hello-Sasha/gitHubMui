@@ -161,7 +161,7 @@ export const UserProfilePage: FC = () => {
 
             <Grid container spacing={2}>
               {repos.slice(0, 10).map((item) => (
-                <Grid item xs={6} md={4} lg={3}>
+                <Grid item xs={6} md={4} lg={3} key={item.id}>
                   <Card
                     sx={{
                       maxWidth: 500,

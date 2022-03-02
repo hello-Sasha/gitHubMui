@@ -10,7 +10,7 @@ import { orange } from '@mui/material/colors';
 
 
 import { preUser } from "../../types";
-import {Grid, Typography,  Link as LinkMui, Box} from "@mui/material";
+import {Grid, Typography,  Link, Box} from "@mui/material";
 interface Props {
   users: preUser[];
 }
@@ -55,11 +55,11 @@ export const Header: FC<Props> = ({ users }: Props) => {
         alignItems="center"
       >
         <Grid item xs={4} md={6} lg={8} >
-          <LinkMui  underline="hover" color="#bf360c" href="/">
+          <Link underline="hover" color="#bf360c" href="/">
             <Typography variant="h6" color="#bf360c">
               GITHUB USERS //
             </Typography>
-          </LinkMui>
+          </Link>
 
         </Grid>
         <Grid item>
@@ -72,12 +72,11 @@ export const Header: FC<Props> = ({ users }: Props) => {
               alignItems={{ xs: "center", sm: "flex-end" }}
             >
               <Grid item>
-                <TextField
+                <TextField  sx={{ input: { color: '#e65100' } }}
                   color="warning"
                   id="outlined-helperText"
                   variant="standard"
                   label="Search users"
-                  defaultValue="John Doe"
                   focused
                   InputProps={{
                     startAdornment: (
@@ -91,10 +90,11 @@ export const Header: FC<Props> = ({ users }: Props) => {
                 />
               </Grid>
               <Grid item>
-                <Button variant="outlined" color="warning" size="large"
+                <Button variant="outlined" color="warning" size="large" type="submit"
                        >
                   SEARCH
                 </Button>
+                
               </Grid>
             </Grid>
           </Box>
