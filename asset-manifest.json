@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/gitHubMui/static/css/main.aca026fb.css",
-    "main.js": "/gitHubMui/static/js/main.1305284f.js",
+    "main.js": "/gitHubMui/static/js/main.4b655256.js",
     "index.html": "/gitHubMui/index.html",
     "main.aca026fb.css.map": "/gitHubMui/static/css/main.aca026fb.css.map",
-    "main.1305284f.js.map": "/gitHubMui/static/js/main.1305284f.js.map"
+    "main.4b655256.js.map": "/gitHubMui/static/js/main.4b655256.js.map"
   },
   "entrypoints": [
     "static/css/main.aca026fb.css",
-    "static/js/main.1305284f.js"
+    "static/js/main.4b655256.js"
   ]
 }
